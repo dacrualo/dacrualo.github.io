@@ -5,31 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  <!-- cargamos el paquete CSS de la página w3 -->
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'> <!-- añadimos una API de google para poder asignar posteriormente el tipo de letra a utilizar en la página -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- cargamos esto para poder añadir iconos en la página -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- cargamos esto para poder añadir iconos en la página (es otro CSS) -->
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif} /* utilizamos esto para aplicar esta fuente a todos los tipos de texto que se van a utilizar */
 </style>
 <body class="w3-grey"> <!-- añadimos color al fondo -->
 
-<!-- ajustes de la página -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<div class="w3-content w3-margin-top" style="max-width:1400px;"> <!-- este va a ser el primer contenedor de la página, con el tamaño total de la misma y desde donde inicia -->
 
-  <!-- con esto añadimos cuadriculas por encima, en este caso 2-->
-  <div class="w3-row-padding">
   
-    <!-- Al utilizar el comando de abajo, le asignamos a la columna de la izquierda 1/3 de tamaño total de la página -->
-    <div class="w3-third">
+  <div class="w3-row-padding"> <!-- con esto añadimos un contenedor con cuadriculas, en este caso 2-->
+    
+    <div class="w3-third"><!-- le asignamos a la columna de la izquierda, con 1/3 de tamaño total de la página -->
     
       <div class="w3-white w3-text-grey w3-card-4"> <!-- propiedades de la columna, fondo blanco, texto en gris, sombreado lateral tipo 4  -->
         <div class="w3-display-container"> <!-- añadimos otro contenedor dentro de la columna -->
           <img src="media/daniel_cruz.png" style="width:100%" alt="Avatar"> <!-- añadimos una imagen de perfil  -->
           <div class="w3-display-bottomleft w3-container w3-text-light-grey">  <!-- dentro de la imagen añadimos otro contedor para escribir el nombre, se puede cambiar el color -->
             <h2>Daniel Cruz Alonso</h2> <!-- para cambiar tamaño elegimos el tipo de título -->
-          </div>
-        </div>
-        <div class="w3-container"> <!-- nuevo contenedor a la altura de la imagen -->
-          <p><i class="fa fa-address-card fa-fw w3-margin-right w3-large w3-text-red"></i> Avd. Madrid 568, 13D</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-green"></i>Zaragoza, España</p>
+          </div><!-- cerramos contenedor del texto con el nombre -->
+        </div><!-- cerramos contenedor con la imagen de perfil -->
+        <div class="w3-container"> <!-- nuevo contenedor debajo de la imagen -->
+          <p><i class="fa fa-address-card fa-fw w3-margin-right w3-large w3-text-red"></i> Avd. Madrid 568, 13D</p><!-- la i nos ayuda a introducir un icono a través del CSS font-awesome 4.7 -->
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-green"></i>Zaragoza, España</p> <!-- mola porque puede cambiar tamaño, color, tipo, margen.... -->
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-yellow"></i>dcalop13@gmail.com</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>6783005264</p>
           <p><i class="fa fa-car fa-fw w3-margin-right w3-large w3-text-blue"></i>Disponibilidad: Sí</p>
@@ -41,57 +39,57 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <p>Manejo de SIG (ArcGIS, QGIS)</p>
           <div class="w3-grey w3-round-xlarge w3-small"> <!-- añadimos un objeto redondeo -->
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div> <!--creamos otro dentro del anterior con un color distinto y tamaño en proporción al % que tenemos de la habilidad -->
-          </div>
+          </div><!-- cerramos el contenedor del objeto -->
           <p>Análisis de transporte</p>
           <div class="w3-grey w3-small"> <!-- probamos igual pero cambiando porcentajes y el acabado, quitamos el que sea cricular -->
             <div class="w3-container w3-center w3-green" style="width:85%">85%</div> <!-- también color de fondo -->
-          </div>
+          </div><!-- cerramos el contenedor del objeto -->
           <p>Análisis espacial</p> <!-- añadimos más y seguimos probando combinaciones -->
           <div class="w3-grey w3-round-large w3-small">
             <div class="w3-container w3-center w3-round-large w3-light-green" style="width:80%">80%</div>
-          </div>
-          <p>Análisis de imágenes satélite</p>
+          </div><!-- cerramos el contenedor del objeto -->
+          <p>Análisis de imágenes satélite</p><!-- añadimos más y seguimos probando combinaciones -->
           <div class="w3-grey w3-round-small w3-small">
             <div class="w3-container w3-center w3-round-small w3-light-green" style="width:75%">75%</div>
-          </div>
-          <p>Programación en R</p>
+          </div><!-- cerramos el contenedor del objeto -->
+          <p>Programación en R</p><!-- añadimos más y seguimos probando combinaciones -->
           <div class="w3-grey w3-round-xxlarge w3-small">
             <div class="w3-container w3-center w3-round-xxlarge w3-lime" style="width:60%">60%</div>
-          </div>
-          <p>Programación en Python</p>
+          </div><!-- cerramos el contenedor del objeto -->
+          <p>Programación en Python</p><!-- añadimos más y seguimos probando combinaciones -->
           <div class="w3-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-khaki" style="width:50%">50%</div>
-          </div>
-          <p>Diseño web</p>
+          </div><!-- cerramos el contenedor del objeto -->
+          <p>Diseño web</p><!-- añadimos más y seguimos probando combinaciones -->
           <div class="w3-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-pale-yellow" style="width:30%">30%</div>
-          </div>
+          </div><!-- cerramos el contenedor del objeto -->
           <!-- ya tenemos todas las habilidades y hechas unas pruebas (no queda bien, lo arreglaré i promise) -->
-          <hr> 
+          <hr> <!-- salto de línea divisoria, podríaamos con un width= "XX%" establecereel ancho de línea respecto al siguiente objeto  -->
 
           <p class="w3-large"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-orange"></i>Languages</b></p><!-- con fa-fw añadimos espaciado entre objetos-->
           <p>Español</p> <!-- muy parecido al anterior, por no decir igual, solo que en este caso no voy a poner el porcentaje porque interesa no tener un porcentaje exacto xd -->
           <div class="w3-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-round-xlarge w3-teal" style="height:18px;width:100%"></div><!-- al no poner texto se debe establecer una anchura  -->
           </div><!-- tampoco hace falta especificar en el lugar donde se quiere poner (anterior en el centro) -->
-          <p>Inglés</p>
+          <p>Inglés</p><!-- por dejarlo parecido al anterior se mantiene la relación de los colores con porcentaje -->
           <div class="w3-white w3-round-xlarge">
             <div class="w3-round-xlarge w3-light-green" style="height:18px;width:70%"></div>
-          </div>
-          <p>catalán</p> 
+          </div><!-- cerramos el contenedor del objeto -->
+          <p>catalán</p> <!-- así más o menos se sabe el dominio del idioma -->
           <div class="w3-white w3-round-xlarge">
             <div class="w3-round-xlarge w3-lime" style="height:18px;width:50%"></div>
-          </div>
-          <p>Alemán</p>
+          </div><!-- cerramos el contenedor del objeto -->
+          <p>Alemán</p><!-- hace años que no estudio alemán pero algo sé xd -->
           <div class="w3-white w3-round-xlarge">
             <div class="w3-round-xlarge w3-khaki" style="height:18px;width:25%"></div>
-          </div>
-          <br>
-        </div>
-      </div><br>
+          </div><!-- cerramos el contenedor del objeto -->
+          <br><!-- salto de línea, muy parecido al anterior pero sin poder ajustar... eso sí se pueden poner varios en una misma línea (por cada uno salta una línea) -->
+        </div><!-- cerramos el contenedor de todo lo de debajo de la imagen -->
+      </div><!-- cerramos las propiedades de la columna izquierda --><br>
 
     <!-- Aunque la iteración no tiene efecto, es útil para saber cuando terminan por ejemplo, las divisiones establecidas, en este caso la columna izquierda -->
-    </div>
+    </div><!-- cerramos columna izquierda -->
 
     <!-- Iniciamos la edición de la columna derecha -->
     <div class="w3-twothird"><!-- indica que esta columna ocupará 2/3 del ancho de la página -->
@@ -106,25 +104,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <p>Auxiliar de servicios de seguridad con servicio principal en Centro Comercial Puerto Venecia, Zaragoza.</p>
           <p>Empresa: ESC Servicios auxiliares S.L.</p>
           <hr><!-- por si no lo había puesto antes esto sirve para hacer un espaciado -->
-        </div>
+        </div><!-- cerramos el contenedor de mi trabajo actual -->
         <div class="w3-container"> 
           <h5 class="w3-opacity"><b>Cámara de Comercio e Industria de Zaragoza</b></h5>
           <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>02/2019 - 05/2019</h6>
           <p>Contrato de prácticas, desempeñando principalmente las siguientes funciones técnicas:</p>
-          <p class="w3-container">- Creación de BBDD en el periodo 2004-2018.</p>
-          <p class="w3-container">- Análisis de la evolución del Aeropuerto de Zaragoza en transporte de pasajeros y volumen de carga.</p>
-          <p class="w3-container">- Entrevistas a los principales actores que actuan en el Aeropuerto de Zaragoza (Inditex, TXT, AENA...).</p>
-          <!-- aquí he creado un contenedor para poder resaltar las tareas -->
+          <p class="w3-margin-left">- Creación de BBDD en el periodo 2004-2018.</p>
+          <p class="w3-margin-left">- Análisis de la evolución del Aeropuerto de Zaragoza en transporte de pasajeros y volumen de carga.</p>
+          <p class="w3-margin-left">- Entrevistas a los principales actores que actuan en el Aeropuerto de Zaragoza (Inditex, TXT, AENA...).</p>
+          <!-- ojito porque aquí he implementado un margen a la izquierda (aquí ya me he creido diseñador web y todo) -->
           <hr>
-        </div>
+        </div><!-- cerramos contenedor de las prácticas curriculares -->
         <div class="w3-container"><!-- como se ve se hace repetitivamente -->
           <h5 class="w3-opacity"><b>Comercial de Energía</b></h5>
           <h6 class="w3-text-indigo"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>02/2015 - 05/2015</h6>
           <p>Comercial ofertando los servicios de energía de Iberdrola a PYMES y empresas.</p>
           <p>Empresa: Satue Solutions S.L.</p>
-          <br>
-        </div>
-      </div>
+          <br><!-- junto con hr los he utilizado para dejar espacios -->
+        </div><!-- cerramos contenedor de la primera experiencia laboral  -->
+      </div><!-- cerramos bloque experiencia laboral -->
 
       <div class="w3-container w3-card-4 w3-white w3-margin-bottom"> <!-- aquí tenemoss el segundo apartado del lado derecho! con sus propiedades -->
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-mortar-board fa-fw w3-margin-right w3-xxlarge w3-text-blue-grey"></i>Formación académica</h2>
@@ -133,83 +131,83 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - <span class="w3-tag w3-indigo">Actualidad</span></h6><!-- creo el tag pero en este caso sin aristas redondeadas -->
           <p>Máster universitario oficial de la Universidad de Zaragoza.</p>
           <hr>
-        </div>
+        </div><!-- cerramos bloque del master -->
         <div class="w3-container"><!-- vamos añadiendo este apartado con las medidas correspondientes -->
-          <h5 class="w3-opacity"><b>Beca de Colaboración en la Universidad de Zaragoza</b></h5>
+          <h5 class="w3-opacity"><b>Beca de Colaboración en la Universidad de Zaragoza</b></h5><!-- he dicho ya lo chula que es la opacidad? si? no?-->
           <h6 class="w3-text-indigo"><i class="fa fa-calendar-o fa-fw w3-margin-right"></i>2018 - 2019</h6>
           <p>Proyecto de investigación --> La infraestructura aeroportuaria de España: evolución, potencialidades e inserción en los
             flujos globales de pasajeros y mercancías.</p>
           <p>Departamento: Geografía y Ordenación del territorio.</p>
           <hr>
-        </div>
+        </div><!-- cerramos contenedor de la beca -->
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Grado en Geografía y Ordenación del Territorio</b></h5>
           <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2015 - 2019</h6>
           <p>Media expediente: 8,46</p>
           <p>Universidad de Zaragoza.</p><br><!-- br también es otra medida de añadir espacio entre contenedores -->
-        </div>
+        </div><!-- me estoy dando cuenta que he repetido ya varias veces lo del <hr> y <br>, sorry -->
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Bachillerato en Ciencias y Tecnología</b></h5>
           <h6 class="w3-text-indigo"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2011 - 2013</h6>
           <p>I.E.S Ramón y Cajal, Zaragoza.</p>
           <br>
-        </div>
-      </div>
+        </div><!-- cerramos bachiller -->
+      </div><!-- ojo aquí acaba el bloque de educación -->
       <div class="w3-container w3-card-4 w3-white w3-margin-bottom"> <!-- se crea otro contenedor para añadir información extra -->
         <h2 class="w3-text-grey w3-padding-16"><i class= "fa fa-lightbulb-o fa-fw w3-margin-right w3-xxlarge w3-text-blue-grey"></i>Otras Competencias</h2>  
-        <div class="w3-container">
+        <div class="w3-container"><!-- creamos bloque publicaciones científicas -->
           <h5 class="w3-opacity"><b>Publicaciones científicas</b></h5>
           <h6 class="w3-opacity"><b><a target="_blank" href="https://revistascientificas.us.es/index.php/REA/article/view/7252/html_3">El transporte aéreo de mercancías en los aeropuertos españoles: hacia una concentración e internacionalización selectiva.</a></b></h6>
           <p>Revista de Estudios andaluces, número 38, págs 101-120.</p> <br><!-- aquí he aprovechao para meter un link -->
-        </div>
+        </div><!-- cerramos bloque publicaciopnes científicas -->
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Habilidades musicales</b></h5>
           <h6 class="w3-opacity"><b>Grado elemental en Enseñanzas Musicales por el Conservatorio Profesional de Zaragoza, en Especialidad de Oboe.</b></h6>
           <br>
           <h6 class="w3-opacity"><b>Bajista del grupo de música <a target="_blank" href="https://onirian.herokuapp.com/"> ONIRIAN</a></b></h6> <!-- Te dejo aquí una web creada por mi colega el informatico, muy guapa! también tiene git...nebur395 -->
-          <p>Volvemos a la carga!</p> <!-- pongo -->
-          <div class="w3-container w3-center"> 
+          <p>Volvemos a la carga!</p> <!-- pongo por aquí un video promocional del 2015-->
+          <div class="w3-container w3-center"> <!-- creo un contenedor porque queda más ordenado y me gusta así la verdad -->
             <video src="media/onirian-241015.mp4" 
               preload="none" 
               controls="controls" 
               autoplay="autoplay" 
-              loop="loop" width="300"
+              loop="loop" width="300" 
               source="video/mp4">
-            </video>
-          </div>
-
-        
-              
-
-          </div>
-
-
-        </div>
-      </div>
-
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-  <!-- End Page Container -->
-</div>
+            </video><!-- cerramos video -->
+          </div><!-- cerramos el contenedor del video -->
+          <br>
+          <p>Canción: Siervos de la inmensidad</p> <!-- Y aquí spam gratuito de una canción, al que le guste el metal le gustará -->
+          <div class="w3-container w3-center"><!-- IGUAL CON EL AUDIO -->
+            <audio src="media/01. Siervos de la inmensidad.mp3"
+              preload="none" 
+              controls="controls" 
+              loop="loop">
+            </audio>
+          </div><!-- cerramos contenedor de la pista de audio --><br>
+        </div><!-- cerramos el contenedor de habilidades musicales -->
+      </div><!--cerramos el bloque de otras competencias  -->
+    </div><!-- cerramos la columna de la derecha! -->
+  </div><!-- Cerramos el contenedor de las cuadrículas creadas (las dos)-->
+</div><!-- Cerramos el contenedor de la página (el de las propiedades de tamaño) -->
 
 <footer class="w3-container w3-blue-grey w3-center w3-margin-top"><!-- creamos pie de página -->
   <p>Por aquí puedes encontrarme</p>
-  <a target="_blank" href="https://facebook.com/daniel.cruzalonso.1" style= "text-decoration: none">
-    <i class="fa fa-facebook-official w3-hover-opacity w3hover-text-blue"></i>
-  </a>
-  <a target="_blank" href="https://instagram.com/dacrualo/" style="margin: 0 1%; text-decoration: none">
-    <i class="fa fa-instagram w3-hover-opacity w3-hover-text-purple"></i>
-  </a>
-  <i class="fa fa-snapchat w3-large w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  
-</footer>
+  <a target="_blank" href="https://facebook.com/daniel.cruzalonso.1" style="margin: 0 1%; text-decoration: none">
+    <i class="fa fa-facebook-official w3-large w3-hover-opacity w3-hover-text-indigo"></i>
+  </a><!-- me ha costado la vida (y preguntar a mi colega el informático) pero he conseguido añadir link a los iconos -->
+  <a target="_blank" href="https://instagram.com/dacrualo/" style="text-decoration: none">
+    <i class="fa fa-instagram w3-large w3-hover-opacity w3-hover-text-purple"></i>
+  </a><!-- y parecerá una tontería y super facil pero que guay cuando lo consigues -->
+  <a target="_blank" href="https://www.youtube.com/channel/UCdo56BxaL0ZKP0BG5RvzVqg" style="margin: 0 1%; text-decoration: none">
+    <i class="fa fa-youtube-play w3-large w3-hover-opacity w3-hover-text-red"></i>
+  </a><!-- y que mola más todavía? pues hacer que cambie color cuando pasas el ratón por encima -->
+  <a target="_blank" href="https://twitter.com/dacrualo" style="margin: 0 1% 0 0%; text-decoration: none">
+    <i class="fa fa-twitter w3-large w3-hover-opacity w3-hover-text-light-blue"></i>
+  </a><!--el hover-opacity-color, y ojo que esto lo he hecho investigando por mi cuenta en la página que te he puesto antes de mi colega  -->
+  <a target="_blank" href="https://www.linkedin.com/in/daniel-cruz-alonso-6b444653/" style="text-decoration: none">
+    <i class="fa fa-linkedin w3-large w3-hover-opacity w3-hover-text-blue"></i>
+  </a><!-- eso y lo del margen que también he aprendido que se puede hacer así -->
+</footer><!-- cerramos pie de página -->
 
-</body>
+</body><!--  -->
 </html>
