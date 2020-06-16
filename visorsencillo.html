@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html> <head>
+<title>Mi visor cartográfico sencillo</title>
+<meta charset="utf-8" /> 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!-- voy a meter el CSS de w3 para editar mínimamente -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><!-- ya que la tenemos aprovechamos -->
+<link rel="stylesheet" href="leaflet/leaflet.css"/>
+<script src="leaflet/leaflet.js"></script> <!-- con esto introducimos el CSS y JS de leaflet  -->
+<style>html,body,h1,p {font-family: "Roboto", helvetica}</style><!-- añadimos este tipo -->
+</head>
+<body class="w3-light-grey w3-center"><!-- body en gris para no variar -->
+
+<h1>Visor simple de Leaflet</h1>
+
+<div class="w3-content w3-left">
+<p> A continuación se muestra simplemente un visor sencillo , sin ninguna temática en especial. Lo divertido y por lo que se crea es para ver comparaciones de carreteras, núcleos de población y principales calles a nivel urbano, a través de imágenes de distinta época. </p>
+
+<!-- bloque dónde aparecerá el mapa -->
+<div class="w3-content w3-center" id="mapa_basico" style="width: 400px; height: 400px;"><!-- aquí ya lo tenemos preparado el lugar donde se representará -->
+</div>
+
+<!-- aqui llamamos a los GEOJSON que nos interesa visualizar -->
+<script src="capas/municipios.geojson"></script><!-- municipios de Aragón, por si nos interesa -->
+<script src="capas/calles.geojson"></script><!-- calles urbanas, para ver los cambios -->
+<script src="capas/nucleos__po.geojson"></script><!-- núcleos de población, para ver si hay variaciones, crecimiento o desaparición -->
+<script src="capas/carreteras.geojson"></script><!-- carreteras, para ver cómo han cambiado (construido) y que zonas han ocupado, cambios del terreno, acción humana, etc... -->
+<!-- los he transformado con Qgis, a través de un WFS, más que nada lo hago así para que se vea que se han aprendido distintas formas... -->
+<!-- iniciamos el script para crear el mapa y añadir capas -->
+
+<script>
+var mapa_leaflet = L.map('mapa_basico').setView([41.42, -0.7], 7); /* Ojito que esto ya es en javascript, con esto es como la capa que contiene el mapa, añadimos las coordenadas que queremos ver*/
+
+/* las coordenadas se tienen que poner en el apatado set view, junto con el nivel detalle*/
+
+/* primero vamos a añadir las capas de base */
+
+var olistat97 = L.tileLayer.wms('http://www.ign.es/wms/pnoa-historico?', { /* pagina web del servicio */
+    layers: 'OLISTAT', /* capa del WMS que queremos incluir, el vuelo americano del 56-57*/
+    format: 'image/png', /* formato en el que lo queremos */
+    maxZoom: 30, /* zoom máximo */
+    transparent: true, 
+    attribution: '&copy; IGN' 
+});
+olistat97.addTo(mapa_leaflet); /* otra que va para adentro */
+
+var PNOA = L.tileLayer.wms('http://www.idee.es/wms/PNOA/PNOA?', {  /* pagina web de referencia */ 
+      layers: 'PNOA', /* zomm maximo permitido */
+      format: 'image/png', /* tipo de formato en el que la queremos */
+      transparent: true, /*capa con transparencia (activao)  */
+      attribution: ' <c', /* contribuciones, o licencias */
+      maxZoom: 30,
+      });
+PNOA.addTo(mapa_leaflet);         /* se nos añade la capa al box */
+
+var vuelo56 = L.tileLayer.wms('http://www.ign.es/wms/pnoa-historico?', { /* pagina web del servicio */
+    layers: 'AMS_1956-1957', /* capa del WMS que queremos incluir, el vuelo americano del 56-57*/
+    format: 'image/png', /* formato en el que lo queremos */
+    maxZoom: 30, /* zoom máximo */
+    transparent: true, 
+    attribution: '&copy; IGN' 
+});
+vuelo56.addTo(mapa_leaflet); /* otra que va para adentro */
+
+/* ahora añadimmos las capas que nos interesa observar los cambios */
+var municipios = L.geoJSON( /* añadimos el objeto */
+    municipios, {  /* METEMOS la capa precargada */
+        color: 'dark', /* elegimos el color de borde */
+        fillColor: 'red', /* elegimos color de polígono */
+        fillOpacity: 0,/* OPACIDA DEL INTERIOR */
+        }); 
+municipios.addTo(mapa_leaflet); /* con esto va pa dentro del mapita */
+
+var nucleos = L.geoJSON( /* añadimos el objeto */
+    nucleos_po, {  /* METEMOS la capa precargada */
+        color: 'red', /* elegimos el color de borde */
+        fillColor: 'red', /* elegimos color de polígono */
+        fillOpacity: 0,/* OPACIDA DEL INTERIOR */
+        }); 
+nucleos.addTo(mapa_leaflet); /* con esto va pa dentro del mapita */
+
+var calles = L.geoJSON( /* añadimos el objeto */
+    calles, { /* capita preccargada */
+    color: 'lightbrown', /* en este caso color de linea */
+});
+calles.addTo(mapa_leaflet); /* para dentro */
+
+var carreteras = L.geoJSON( /* añadimos el objeto */
+    carreteras, { /* capa de precarga */
+    color: 'blue', /* colorcitooo */
+});
+carreteras.addTo(mapa_leaflet); /* ya sabemos no? paaaaaaaaa dentroooo */
+
+/* OJO, empezamos con el selector de capas, primero diferenciando entre las de base y superposición */
+var baseMaps = {                  /* en este apartado se eligen entre uno u otro mapa base (no selección de varios) */
+    "PNOA actual ": PNOA,      /* ojito, primero la descripción y luego el nombre de la variable creada */
+    "Imagen 56-57": vuelo56,   /* en la descripción ponemos en semejaza al objeto */
+    "Olistat 97-98": olistat97 /* por lo tanto metemos las tres imágenes de distintas épocas */
+    };
+    overlayMaps = {  /* este apatado para las de selección, pudiendo elegir a nuestro gusto ver una o varias a la vez! */
+        "municipios": municipios, /* misma forma de añadir que en el otro apartaditoooo */
+        "nucleos de población": nucleos,
+        "calles": calles,
+        "carreteras": carreteras,
+    };
+var capas = L.control.layers(   /* una vez hecho, añadimos el selector en base a lo anterior */
+  baseMaps, /* añadimos capas que hemos catalogado de base */
+  overlayMaps,  /* añadimos capas que hemos catalogado de superposición */
+  {collapsed:true}); /* seleccionamos true para que tengamos que desplegar el selector (queda más guay) */
+capas.addTo(mapa_leaflet);  /* por último lo añadimos al mapita */
+
+/* para finalizar, todo mpa necesita una leyenda! */
+var escala = L.control.scale({ /* añadimos objeto! */
+    imperial:false, 
+    position:"topleft", /* posición en la que queremos que esté dentro del mapa */
+})
+ escala.addTo(mapa_leaflet); /* para dentro!  */
+
+
+</script> <!-- y se acabó! -->
+
+</div>
