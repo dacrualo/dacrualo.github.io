@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html> <head>
+<title>Mi primer mapa web con Leaflet</title>
+<meta charset="utf-8" /> 
+
+    <link rel="stylesheet" href="leaflet/leaflet.css"/>
+<!-- enlace a JavaScript de Leaflet v. 1.6.0 (justo tras CSS) -->
+    <script src="leaflet/leaflet.js">
+    </script>
+
+</head>
+<body>
+<h1>Mapa de prueba</h1>
+<p> bieenvenidoooooo </p>
+
+<!-- bloque dónde aparecerá el mapa -->
+<div id="bloque_mapa" style="width: 400px; height: 400px;">
+</div>
+
+
+<script src="provincias.geojson">
+</script>  
+
+<script>
+var mi_mapa = L.map('bloque_mapa').setView([41.655, -0.8947], 5);
+
+var nucleos_pob = L.geoJSON( // crear objeto provincias como capa geojson
+  provincias, {             // código a cargar: `provincias`
+  color: 'red',             // estilo color
+  fillColor: 'blue',        //        color de relleno
+  fillOpacity: 0.1,         //        opacidad de relleno
+  });
+
+nucleos_pob.addTo(mi_mapa) 
+var comarcas = L.geoJSON(nucleos_pob); // genero capa leaflet
+comarcas.addTo(mi_mapa)    
+
+
+</script>
